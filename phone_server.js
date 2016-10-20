@@ -483,7 +483,8 @@ Meteor.methods({verifyPhone: function (phone, code, newPassword) {
 
             // Replace all valid login tokens with new ones (changing
             // password should invalidate existing sessions).
-            Accounts._clearAllLoginTokens(user._id);
+            // leave login tokens for multiple user sessions.
+            //Accounts._clearAllLoginTokens(user._id);
 
             return {userId: user._id};
         }
