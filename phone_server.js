@@ -280,8 +280,7 @@ Accounts.setPhonePassword = function (userId, newPlaintextPassword) {
         {
             $unset: {
                 'services.phone.srp'         : 1, // XXX COMPAT WITH 0.8.1.3
-                'services.phone.verify'      : 1,
-                'services.resume.loginTokens': 1
+                'services.phone.verify'      : 1
             },
             $set  : {'services.phone.bcrypt': hashPassword(newPlaintextPassword)} }
     );
